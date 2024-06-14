@@ -1,0 +1,86 @@
+/* CSS GENERAL */
+.btn {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 100px;
+  padding: 10px 20px;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+.navbar-collapse {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid black;
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #e8e9e9;
+}
+
+/* CSS HOME  */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-title-button-container {
+  background-color: #a8a9aa;
+  border-radius: 20px;
+  color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+/* CSS LOGIN / REGISTER / DASHBOARD  */
+
+.login-container,
+.register-container,
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container form,
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-container div,
+.register-container div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-container button {
+  margin-top: 20px;
+}
+.confirm-btn {
+  background-color: #007bff;
+  color: white;
+}
