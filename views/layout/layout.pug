@@ -8,11 +8,7 @@ html
   body.container
     header
       include ../partials/_nav
-    if message
-      if message.class
-        div.alert(class=message.class)= message.text
-      else
-        div.alert= message.text
+      include ../flash/flash
     block content
     footer
       block footer

@@ -4,8 +4,9 @@ import User from "../models/User.js";
 
 const router = express.Router();
 
-// Route pour afficher le formu de login
+// Route pour afficher le form de login
 router.get("/", (req, res) => {
+  // req.flash("success", "Connexion réussie !");
   res.render("login", { title: "Login" });
 });
 
@@ -28,10 +29,11 @@ router.post("/", async (req, res) => {
     if (hashedPassword !== user.password) {
       return res.status(401).json({ message: "Mot de passe incorrect" });
     }
-
+    // req.flash("success", "Connexion réussie !");
     res.json({ message: "Connexion réussie", user });
   } catch (error) {
     console.error("Erreur lors de la connexion :", error);
+    // req.flash("error", "La connexion a échouée");
     res.status(500).json({ message: "Erreur du serveur" });
   }
 });

@@ -27,6 +27,7 @@ const checkExistingUser = async (req, res, next) => {
   try {
     const existingUser = await User.findOne({ email });
     if (existingUser) {
+      // req.flash("error", "L'utilisateur existe déjà");
       return res.status(400).json({ message: "L'utilisateur existe déjà" });
     }
     next();
@@ -35,6 +36,10 @@ const checkExistingUser = async (req, res, next) => {
       "Erreur lors de la vérification de l'utilisateur existant :",
       error
     );
+    // req.flash(
+    //   "error",
+    //   "Erreur lors de la vérification de l'utilisateur existant :"
+    // );
     res.status(500).json({ message: "Erreur du serveur" });
   }
 };
@@ -68,9 +73,11 @@ router.post(
 
       await newUser.save();
 
+      // req.flash("success", "Votre inscription a bien été prise en compte");
       res.redirect("/dashboard");
     } catch (error) {
       console.error("Erreur lors de l'ajout d'utilisateur :", error);
+      // req.flash("error", "Erreur lors de l'enregistrement");
       res.status(500).json({ message: "Erreur du serveur" });
     }
   }

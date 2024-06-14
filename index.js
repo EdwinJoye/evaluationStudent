@@ -5,6 +5,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import userRoutes from "./routes/userRoutes.js";
 import loginRoutes from "./routes/loginRoutes.js";
+import flash from "connect-flash";
 import helmet from "helmet";
 
 dotenv.config();
@@ -42,6 +43,9 @@ const isAuthenticated = (req, res, next) => {
     res.redirect("/evaluation/login");
   }
 };
+
+// Hook pour mettre des  messages flash
+app.use(flash());
 
 // Route de Home
 app.get("/", (req, res) => {
